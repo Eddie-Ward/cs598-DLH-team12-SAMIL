@@ -1,0 +1,10 @@
+# Files
+*.pt
+*.pth.tar
+*.txt
+*.csv
+*.png
+
+# Python
+__pycache__/
+.ipynb_checkpoints
