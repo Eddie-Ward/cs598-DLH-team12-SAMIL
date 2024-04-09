@@ -63,7 +63,9 @@ conda env create -f environment.yml
 
 ### Archived Runs
 
-Uploaded somewhere TBD
+Available to download here in this [Drive folder](https://drive.google.com/drive/folders/1zy9JNd9pbQJhMTkI03AuhuU7Ntf7dpgc?usp=sharing).
+
+Put the entire folder of the selected run (e.g. SAMIL-70.2) in the `model_runs_archived/` folder.
 
 ## Project Citation
 
