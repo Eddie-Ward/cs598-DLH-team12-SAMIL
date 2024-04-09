@@ -25,7 +25,7 @@ Once the dataset has been downloaded you will need the following folder structur
 │   │   ├── train_studies.csv
 │   │   └── val_studies.csv
 │   ├── seed1 (not used)
-│   ├── seed2 (not sued)
+│   ├── seed2 (not used)
 │   └── TMED2SummaryTable.csv
 ├── echo_data/
 │   ├── labeled/
