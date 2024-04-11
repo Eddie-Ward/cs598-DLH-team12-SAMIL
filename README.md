@@ -63,6 +63,8 @@ conda env create -f environment.yml
 
 ### Archived Runs
 
+Note: By default, the notebook will use `gdown` to automatically download saved checkpoints for each ablation. Use the link below if `gdown` fails.
+
 Available to download here in this [Drive folder](https://drive.google.com/drive/folders/1zy9JNd9pbQJhMTkI03AuhuU7Ntf7dpgc?usp=sharing).
 
 Put the entire folder of the selected run (e.g. SAMIL-70.2) in the `model_runs_archived/` folder.
