@@ -15,7 +15,7 @@ You will need to apply for access [here](https://tmed.cs.tufts.edu/).
 
 ### Folder Structure
 
-Once the dataset has been downloaded you will need the following folder structure, and place the dataset, pretrained checkpoints, etc. accordingly. The pretrained view classifiers and MOCO pretrained checkpoints are available on the original paper's Github repo.
+Once the dataset has been downloaded you will need the following folder structure, and place the dataset, pretrained checkpoints, etc. accordingly. The pretrained view classifiers and MOCO pretrained checkpoints are available on the original paper's Github repo. The split and summary data CSVs are available in the original repo under their `data_info` folder.
 
 ```
 .
