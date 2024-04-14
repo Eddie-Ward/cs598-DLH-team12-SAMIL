@@ -7482,7 +7482,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Disclaimer-and-Link-to-Our-Github-Repo">Disclaimer and Link to Our Github Repo<a class="anchor-link" href="#Disclaimer-and-Link-to-Our-Github-Repo">¶</a></h4><p>Please find our Github repo <a href="https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL">here</a> which includes this notebook as well as instructions to setup to run this notebook. For this submission, we could not setup a Colab environment for a number of reasons including that our dataset is not public and the computational requirements for the model are too large. Because the dataset is not public, we have included instructions for applying to dataset access on the repo, and code below to generate synthetic, fake data so that this notebook is still runnable.</p>
+<h4 id="Disclaimer-and-Link-to-Our-Github-Repo">Disclaimer and Link to Our Github Repo<a class="anchor-link" href="#Disclaimer-and-Link-to-Our-Github-Repo">¶</a></h4><p>Please find our Github repo here: <a href="https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL">https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL</a> which includes this notebook as well as instructions to setup to run this notebook.</p>
+<p>For this submission, we could not setup a Colab environment for a number of reasons including that our dataset is not public and the computational requirements for the model are too large. Because the dataset is not public, we have included instructions for applying for dataset access in our repo as well as code below to generate synthetic, fake data so that this notebook is still runnable.</p>
 </div>
 </div>
 </div>
@@ -7544,9 +7545,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h1><p>Our GitHub repo is located <a href="https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL">here</a>.</p>
+<h1 id="Methodology">Methodology<a class="anchor-link" href="#Methodology">¶</a></h1><p>Our GitHub repo is located here: <a href="https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL">https://github.com/Eddie-Ward/cs598-DLH-team12-SAMIL</a></p>
+<p>The original paper's Github repo is located here: <a href="https://github.com/tufts-ml/SAMIL">https://github.com/tufts-ml/SAMIL</a></p>
 <p>Please follow the setup instructions there including acquiring dataset access, downloading their pretrained checkpoints, and setting up the Conda environment with a provided <code>environment.yml</code> file.</p>
-<p><strong>Note</strong>: You will need to download the pretrained checkpoints of the view classifier, MoCo img-CL, and MoCo bag pretrained in order for the respective training and testing loops to work below. The link to download is on their Github, and is included <a href="https://tufts.app.box.com/s/c5w8123j7h3dpls75jye1363uh8qv8us">here</a>. We have chosen not to re-upload those checkpoints ourselves.</p>
+<p><strong>Note</strong>: You will need to download the pretrained checkpoints of the view classifier, MoCo img-CL, and MoCo bag pretrained in order for the respective training and testing loops to work below. The link to download is on their Github, and is included <a href="https://tufts.app.box.com/s/c5w8123j7h3dpls75jye1363uh8qv8us">here</a>. We have chosen not to re-upload those checkpoints ourselves. You will also need to download the split and summary CSVs for the TMED-2 dataset which can be found in the <code>data_info</code> folder in the original repository.</p>
 </div>
 </div>
 </div>
@@ -7771,13 +7773,13 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Source">Source<a class="anchor-link" href="#Source">¶</a></h4><p>The dataset is from the TMED-2 dataset available here for approved users that apply on the website.
+<h4 id="Source">Source<a class="anchor-link" href="#Source">¶</a></h4><p>The dataset is from the TMED-2 dataset available here for approved users that apply on their website:
 <a href="https://tmed.cs.tufts.edu/tmed_v2.html">https://tmed.cs.tufts.edu/tmed_v2.html</a></p>
 <p>This paper specifically uses the <code>view_and_diagnosis_labeled_set</code> although parts of the model are pretrained using other sets.</p>
 <p>The dataset consists of three hierarchies: <code>patient</code>, <code>study</code>, and <code>image</code>. Each <code>patient</code> can have multiple <code>studies</code> recorded on different days. Each <code>study</code> consists of <code>images</code> of different ultrasound views of the <code>patient</code>'s heart obtained through ECG (echocardiogram). The images are codified in the following format: <code>&lt;patient_id&gt;s&lt;study_id&gt;_&lt;image_id&gt;</code> e.g. <code>9s1_0.png</code> indicates <code>patient_id = 9</code>, <code>study_id = 1</code>, and <code>image_id = 0</code>. Patient IDs are universally unique in the entire TMED-2 dataset, but study IDs (<code>study_id = 1</code> indicates the first study of that patient) and image IDs are not (even across the labeled and unlabeled set of the same study).</p>
 <p>For labels, the dataset has 3 labels: 0 = no AS, 1 = mild to moderate AS, and 2 = severe AS.</p>
 <p>Due to computation feasibility constraints, we are only using <code>Split 1</code> out of the 3 available DEV479 CV splits. DEV479 splits consist of 360 train studies, 119 val studies, and 120 test studies (called DEV479 because 360 + 119 = 479). These are pre-defined and specified in CSVs available from the original GitHub repo.</p>
-<p>Note: Run the following two blocks only if you have access to the dataset and have correctly imported it into the repo.
+<p><strong>Note</strong>: Run the following two blocks only if you have access to the dataset and have correctly imported it into the repo.
 Otherwise, there will be code below to generate random, synthetic data for use in verifying training and evaluation code.</p>
 </div>
 </div>
@@ -7968,7 +7970,7 @@ Otherwise, there will be code below to generate random, synthetic data for use i
 <h4 id="Data-Processing:-Transform-Functions">Data Processing: Transform Functions<a class="anchor-link" href="#Data-Processing:-Transform-Functions">¶</a></h4><p>We are using the transform functions defined in the paper's original GitHub including an option to normalize images.
 For the standard train dataset, images will go through a <code>RandomCrop</code> and <code>RandomHorizontalFlip</code>. Based on the original Github, these transformations are used for ABMIL.</p>
 <p>For the <code>RandAug</code> train dataset, images will go through a random selection of transformations. Based on the original GitHub, this variation of the train dataset was used in the MoCo pretraining task and SAMIL runs. Because the original GitHub provides only saved checkpoints and does not provide implementation code for training the view classifier or for MoCo pretraining, we are also using <code>RandAug</code> for all SAMIL runs.</p>
-<p>Note: The code has just been adapted to the <code>v2</code> module of <code>torchvision.transforms</code>. As such, soon-to-be deprecated methods like <code>transforms.toTensor()</code> are changed.</p>
+<p><strong>Note</strong>: We have adapted the code to the <code>v2</code> module of <code>torchvision.transforms</code>. As such, soon-to-be deprecated methods like <code>transforms.toTensor()</code> are changed.</p>
 </div>
 </div>
 </div>
@@ -9123,36 +9125,6 @@ The below code is not modified from the paper's GitHub.</p>
         <span class="n">bal_acc</span> <span class="o">=</span> <span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">ground_truth_labels</span><span class="p">,</span> <span class="n">pred_labels</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">bal_acc</span>
-
-
-<span class="k">def</span> <span class="nf">eval_model_with_ema</span><span class="p">(</span><span class="n">model</span><span class="p">:</span> <span class="n">Attention</span> <span class="o">|</span> <span class="n">SAMIL</span><span class="p">,</span> <span class="n">dataloader</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">ema_model</span><span class="p">):</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-
-    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-        <span class="n">ground_truth_labels</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">pred_labels</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">ema_pred_labels</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">bag_label</span> <span class="ow">in</span> <span class="n">dataloader</span><span class="p">:</span>
-            <span class="n">data</span><span class="p">,</span> <span class="n">bag_label</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">),</span> <span class="n">bag_label</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">DEVICE</span><span class="p">)</span>
-
-            <span class="n">pred_logit</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">ema_pred_logit</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ema_model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-            <span class="n">pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">pred_logit</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pred_label</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-            <span class="n">ema_pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">ema_pred_logit</span><span class="p">,</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="n">ema_pred_label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">ema_pred_label</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
-
-            <span class="n">pred_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pred_label</span><span class="p">)</span>
-            <span class="n">ema_pred_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ema_pred_label</span><span class="p">)</span>
-            <span class="n">ground_truth_labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bag_label</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
-
-        <span class="n">bal_acc</span> <span class="o">=</span> <span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">ground_truth_labels</span><span class="p">,</span> <span class="n">pred_labels</span><span class="p">)</span>
-        <span class="n">ema_bal_acc</span> <span class="o">=</span> <span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">ground_truth_labels</span><span class="p">,</span> <span class="n">ema_pred_labels</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">bal_acc</span><span class="p">,</span> <span class="n">ema_bal_acc</span>
 </pre></div>
 </div>
 </div>
@@ -10723,14 +10695,13 @@ Bal_acc: 0.7291101055806938
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="References">References<a class="anchor-link" href="#References">¶</a></h1><p>Citation for the original paper:</p>
-<pre><code>@article {
-    huang2023detecting,
-    title={Detecting Heart Disease from Multi-View Ultrasound Images via Supervised Attention Multiple Instance Learning},
-    author={Huang, Zhe and Wessler, Benjamin S and Hughes, Michael C},
-    journal={arXiv preprint arXiv:2306.00003},
-    year={2023}
-}
-</code></pre>
+<p>@article {
+huang2023detecting,
+title={Detecting Heart Disease from Multi-View Ultrasound Images via Supervised Attention Multiple Instance Learning},
+author={Huang, Zhe and Wessler, Benjamin S and Hughes, Michael C},
+journal={arXiv preprint arXiv:2306.00003},
+year={2023}
+}</p>
 </div>
 </div>
 </div>

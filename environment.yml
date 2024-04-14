@@ -1,4 +1,4 @@
-name: DLH
+name: SAMIL
 channels:
     - pytorch
     - nvidia
