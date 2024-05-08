@@ -1,5 +1,7 @@
 # CS 598 DLH Team 12 Project: SAMIL
 
+Notebook demo video on [Drive](https://drive.google.com/file/d/1cIpK4uhEUdqRQk0GO5TSViUHNw1A7PU_/view?usp=sharing)
+
 The code and results are based on the original paper "Detecting Heart Disease from Multi-View Ultrasound Images via Supervised Attention Multiple Instance Learning (MLHC'23)"
 
 Link to [original paper](https://static1.squarespace.com/static/59d5ac1780bd5ef9c396eda6/t/64d19be5cdd05e1acf0405e9/1691458534144/ID49_Research+Paper_2023.pdf)
